@@ -1,0 +1,338 @@
+﻿@model PaginationSearchInput
+@{
+	    decimal max = ViewBag.maxPrice;
+    decimal min = ViewBag.minPrice;
+}
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="img/fav.png">
+	<!-- Author Meta -->
+	<meta name="author" content="CodePixar">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<title>Karma Shop</title>
+
+	<!--
+            CSS
+            ============================================= -->
+	<link rel="stylesheet" href="css/linearicons.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/themify-icons.css">
+	<link rel="stylesheet" href="css/nice-select.css">
+	<link rel="stylesheet" href="css/nouislider.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+<style>
+	.social-info {
+    display: inline-flex;
+    flex-direction: column; /* icon trên text */
+    align-items: center;
+    justify-content: center;
+    gap: 4px; /* khoảng cách icon và text */
+    padding: 6px 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+}
+
+.social-info:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+/* overlay full screen */
+#imgOverlay {
+    display: none; /* ẩn mặc định */
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.95); /* nền tối gần như full màn hình */
+    display: flex;
+    justify-content: center; /* căn giữa ngang */
+    align-items: center;    /* căn giữa dọc */
+}
+
+/* ảnh phóng to full screen, giữ tỷ lệ */
+#imgOverlay img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* giữ tỷ lệ */
+}
+
+/* nút đóng */
+#imgOverlay .closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+}
+</style>
+	<!-- End Header Area -->
+
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Shop Category page</h1>
+					<nav class="d-flex align-items-center">
+						<a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
+						<a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>
+						<a href="category.html">Fashon Category</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+	<div class="container">
+		<form id="formSearch"
+              method="get"
+              action="~/Product/Search"
+              data-target="searchResult"
+              onsubmit="paginationSearch(event, this, 1)">
+		<div class="row">
+			<div class="col-xl-3 col-lg-4 col-md-5">
+				<div class="sidebar-categories">
+					<ul class="main-categories">
+
+						<div class="common-filter">
+						<div class="head">Brands</div>
+
+							<ul>
+								@foreach(var i in (List<SelectListItem>)ViewBag.Category)
+{
+    <li class="filter-list">
+        <input class="pixel-radio" 
+               type="radio" 
+               id="category_@i.Value"   
+               name="CategoryID" 
+               value="@i.Value" />       
+        <label for="category_@i.Value"><span>@i.Text</span></label>
+    </li>
+}
+									@* <li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label for="apple">Apple<span>(29)</span></label></li> *@
+								@* <li class="filter-list"><input class="pixel-radio" type="radio" id="asus" name="brand"><label for="asus">Asus<span>(29)</span></label></li>
+								<li class="filter-list"><input class="pixel-radio" type="radio" id="gionee" name="brand"><label for="gionee">Gionee<span>(19)</span></label></li>
+								<li class="filter-list"><input class="pixel-radio" type="radio" id="micromax" name="brand"><label for="micromax">Micromax<span>(19)</span></label></li>
+								<li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">Samsung<span>(19)</span></label></li> *@
+							</ul>
+
+					</div>
+
+
+						<div class="common-filter">
+						<div class="head">Price</div>
+						<div class="price-range-area">
+							
+							<div class="value-wrapper ">
+									<div class="price">
+										<label>Price:</label>
+
+										<div>
+											<input type="number" name="MinPrice" id="min-price" placeholder="Giá thấp nhất" />
+											<span> đ</span>
+										</div>
+
+										<div>
+											<input type="number" name="MaxPrice" id="max-price" placeholder="Giá cao nhất" />
+											<span> đ</span>
+										</div>
+									</div>
+@*     <input type="hidden" name="MaxPrice" id="max-input" />
+<div id="lower-value-price"></div>
+    <input type="hidden" name="MinPrice" value="12000" id="min-input" />
+
+    <div id="upper-value-price">1690000000</div>
+    <input type="hidden" name="MaxPrice" value="1690000000" id="max-input" /> *@
+							</div>
+						</div>
+					</div>
+						
+					</ul>
+				</div>
+
+			</div>
+			<div class="col-xl-9 col-lg-8 col-md-7">
+				<!-- Start Filter Bar -->
+				<div class="filter-bar d-flex flex-wrap align-items-center">
+					<div class="sorting">
+						<select name="Sort">
+							<option value=0">-- Không sắp xếp --</option>
+							<option value="1">Giá tăng dần</option>
+							<option value="1">Giá giảm dần</option>
+							<option value="3">Tên A -> Z</option>
+							<option value="4">Tên Z -> A</option>
+						</select>
+					</div>
+					<div class="sorting mr-auto" >
+						<button type="submit" class="btn btn-info " style="height: 45px;">
+                    <i class="bi bi-search me-1"></i>
+                </button>
+    <input type="text" name="SearchValue" placeholder="Nhậptên sản phẩm "style="width:400px; height:45px;" />
+</div>
+
+
+				</div>
+				<!-- End Filter Bar -->
+				<!-- Start Best Seller -->
+				<div id="searchResult"> </div>
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            paginationSearch(null, document.getElementById("formSearch"), @Model.Page);
+        });
+    </script>
+}
+				<!-- End Filter Bar -->
+			</div>
+		</div>
+		</form>
+	</div>
+
+	<!-- Start related-product Area -->
+	<section class="related-product-area section_gap">
+		
+	</section>
+	<!-- End related-product Area -->
+
+
+
+	<!-- Modal Quick Product View -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="container relative">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="product-quick-view">
+					<div class="row align-items-center">
+						<div class="col-lg-6">
+							<div class="quick-view-carousel">
+								<div class="item" style="background: url(img/organic-food/q1.jpg);">
+
+								</div>
+								<div class="item" style="background: url(img/organic-food/q1.jpg);">
+
+								</div>
+								<div class="item" style="background: url(img/organic-food/q1.jpg);">
+
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="quick-view-content">
+								<div class="top">
+									<h3 class="head">Mill Oil 1000W Heater, White</h3>
+									<div class="price d-flex align-items-center"><span class="lnr lnr-tag"></span> <span class="ml-10">$149.99</span></div>
+									<div class="category">Category: <span>Household</span></div>
+									<div class="available">Availibility: <span>In Stock</span></div>
+								</div>
+								<div class="middle">
+									<p class="content">Mill Oil is an innovative oil filled radiator with the most modern technology. If you are
+										looking for something that can make your interior look awesome, and at the same time give you the pleasant
+										warm feeling during the winter.</p>
+									<a href="#" class="view-full">View full Details <span class="lnr lnr-arrow-right"></span></a>
+								</div>
+								<div class="bottom">
+									<div class="color-picker d-flex align-items-center">Color:
+										<span class="single-pick"></span>
+										<span class="single-pick"></span>
+										<span class="single-pick"></span>
+										<span class="single-pick"></span>
+										<span class="single-pick"></span>
+									</div>
+									<div class="quantity-container d-flex align-items-center mt-15">
+										Quantity:
+										<input type="text" class="quantity-amount ml-15" value="1" />
+										<div class="arrow-btn d-inline-flex flex-column">
+											<button class="increase arrow" type="button" title="Increase Quantity"><span class="lnr lnr-chevron-up"></span></button>
+											<button class="decrease arrow" type="button" title="Decrease Quantity"><span class="lnr lnr-chevron-down"></span></button>
+										</div>
+
+									</div>
+									<div class="d-flex mt-20">
+										<a href="#" class="view-btn color-2"><span>Add to Cart</span></a>
+										<a href="#" class="like-btn"><span class="lnr lnr-layers"></span></a>
+										<a href="#" class="like-btn"><span class="lnr lnr-heart"></span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+	 crossorigin="anonymous"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script src="js/jquery.ajaxchimp.min.js"></script>
+	<script src="js/jquery.nice-select.min.js"></script>
+	<script src="js/jquery.sticky.js"></script>
+	<script src="js/nouislider.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<!--gmaps Js-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+	<script src="js/gmaps.min.js"></script>
+	<script src="js/main.js"></script>
+@* <div id="imgOverlay">
+    <span class="closeBtn">&times;</span>
+    <img id="overlayImg" src="" alt="Product Image">
+</div> *@
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const overlay = document.getElementById('imgOverlay');
+    const overlayImg = document.getElementById('overlayImg');
+    const closeBtn = overlay.querySelector('.closeBtn');
+
+    // Nút đóng
+    closeBtn.addEventListener('click', function() {
+        overlay.style.display = 'none';
+    });
+
+    // Click ngoài ảnh cũng đóng overlay
+    overlay.addEventListener('click', function(e) {
+        if(e.target === overlay) {
+            overlay.style.display = 'none';
+        }
+    });
+
+    // Hàm mở ảnh
+    window.openImage = function(productId) {
+        const img = document.getElementById('productImg_' + productId);
+        if(!img) return;
+        overlayImg.src = img.src; // URL ảnh
+        overlay.style.display = 'flex';
+    };
+});
+function updatePrice(min, max) {
+    // 1. Cập nhật phần hiển thị (có định dạng dấu phẩy cho đẹp)
+    document.getElementById('lower-value-price').innerText = min.toLocaleString('vi-VN');
+    document.getElementById('upper-value-price').innerText = max.toLocaleString('vi-VN');
+
+    // 2. QUAN TRỌNG: Cập nhật giá trị vào thẻ input để C# nhận được
+    document.getElementById('min-input').value = min;
+    document.getElementById('max-input').value = max;
+}
+</script>

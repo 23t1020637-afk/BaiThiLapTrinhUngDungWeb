@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Downloads\\BaiThiLTUDW_23T1020637 (2)\\BaiThiLTUDW_23T1020637\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{86C12979-1911-4263-AF93-B03C47532B2A}|SV23T1020637.Admin\\SV23T1020637.Admin.csproj|c:\\users\\admin\\downloads\\baithiltudw_23t1020637 (2)\\baithiltudw_23t1020637\\sv23t1020637.admin\\views\\product\\listphotos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C12979-1911-4263-AF93-B03C47532B2A}|SV23T1020637.Admin\\SV23T1020637.Admin.csproj|solutionrelative:sv23t1020637.admin\\views\\product\\listphotos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86C12979-1911-4263-AF93-B03C47532B2A}|SV23T1020637.Admin\\SV23T1020637.Admin.csproj|c:\\users\\admin\\downloads\\baithiltudw_23t1020637 (2)\\baithiltudw_23t1020637\\sv23t1020637.admin\\views\\product\\editphoto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C12979-1911-4263-AF93-B03C47532B2A}|SV23T1020637.Admin\\SV23T1020637.Admin.csproj|solutionrelative:sv23t1020637.admin\\views\\product\\editphoto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86C12979-1911-4263-AF93-B03C47532B2A}|SV23T1020637.Admin\\SV23T1020637.Admin.csproj|c:\\users\\admin\\downloads\\baithiltudw_23t1020637 (2)\\baithiltudw_23t1020637\\sv23t1020637.admin\\views\\product\\editattribute.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C12979-1911-4263-AF93-B03C47532B2A}|SV23T1020637.Admin\\SV23T1020637.Admin.csproj|solutionrelative:sv23t1020637.admin\\views\\product\\editattribute.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86C12979-1911-4263-AF93-B03C47532B2A}|SV23T1020637.Admin\\SV23T1020637.Admin.csproj|c:\\users\\admin\\downloads\\baithiltudw_23t1020637 (2)\\baithiltudw_23t1020637\\sv23t1020637.admin\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C12979-1911-4263-AF93-B03C47532B2A}|SV23T1020637.Admin\\SV23T1020637.Admin.csproj|solutionrelative:sv23t1020637.admin\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ListPhotos.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BaiThiLTUDW_23T1020637 (2)\\BaiThiLTUDW_23T1020637\\SV23T1020637.Admin\\Views\\Product\\ListPhotos.cshtml",
+              "RelativeDocumentMoniker": "SV23T1020637.Admin\\Views\\Product\\ListPhotos.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BaiThiLTUDW_23T1020637 (2)\\BaiThiLTUDW_23T1020637\\SV23T1020637.Admin\\Views\\Product\\ListPhotos.cshtml*",
+              "RelativeToolTip": "SV23T1020637.Admin\\Views\\Product\\ListPhotos.cshtml*",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAD4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T14:11:22.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditPhoto.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BaiThiLTUDW_23T1020637 (2)\\BaiThiLTUDW_23T1020637\\SV23T1020637.Admin\\Views\\Product\\EditPhoto.cshtml",
+              "RelativeDocumentMoniker": "SV23T1020637.Admin\\Views\\Product\\EditPhoto.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BaiThiLTUDW_23T1020637 (2)\\BaiThiLTUDW_23T1020637\\SV23T1020637.Admin\\Views\\Product\\EditPhoto.cshtml",
+              "RelativeToolTip": "SV23T1020637.Admin\\Views\\Product\\EditPhoto.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T14:05:22.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditAttribute.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BaiThiLTUDW_23T1020637 (2)\\BaiThiLTUDW_23T1020637\\SV23T1020637.Admin\\Views\\Product\\EditAttribute.cshtml",
+              "RelativeDocumentMoniker": "SV23T1020637.Admin\\Views\\Product\\EditAttribute.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BaiThiLTUDW_23T1020637 (2)\\BaiThiLTUDW_23T1020637\\SV23T1020637.Admin\\Views\\Product\\EditAttribute.cshtml",
+              "RelativeToolTip": "SV23T1020637.Admin\\Views\\Product\\EditAttribute.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T14:05:12.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BaiThiLTUDW_23T1020637 (2)\\BaiThiLTUDW_23T1020637\\SV23T1020637.Admin\\Views\\Product\\Edit.cshtml",
+              "RelativeDocumentMoniker": "SV23T1020637.Admin\\Views\\Product\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BaiThiLTUDW_23T1020637 (2)\\BaiThiLTUDW_23T1020637\\SV23T1020637.Admin\\Views\\Product\\Edit.cshtml",
+              "RelativeToolTip": "SV23T1020637.Admin\\Views\\Product\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T14:04:11.309Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

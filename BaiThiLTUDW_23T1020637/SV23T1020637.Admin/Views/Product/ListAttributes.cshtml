@@ -1,0 +1,71 @@
+﻿@model int
+@{
+    Layout = null;
+    var model = await CatalogDataService.ListAttributesAsync(Model) ?? new List<ProductAttribute>();
+}
+
+<div class="row justify-content-center">
+    <div class="col-12">
+        <div class="card card-success card-outline mt-4">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col">
+                        <h6 id="attributes" class="card-title mb-0">
+                            <i class="bi bi-list-check me-2"></i>
+                            Thuộc tính mặt hàng
+                        </h6>
+                    </div>
+                    <div class="col text-end">
+
+                        <a class="btn btn-sm btn-primary" asp-controller="Product"
+                               asp-action="CreateAttribute" asp-route-_ProductID="@Model">
+                                <i class="bi bi-plus"></i> Thêm thuộc tính
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body p-1">
+                @if (model == null || model.Count == 0)
+                {
+                    <p>Chưa có thuộc tính nào.</p>
+                }
+                else
+                {
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead class="table-secondary">
+                            <tr>
+                                <th>Tên thuộc tính</th>
+                                <th>Giá trị</th>
+                                <th class="text-center">Thứ tự</th>
+                                <th class="text-center"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var ij = 0;
+                            }
+                            @foreach (var item in model)
+                            {
+                                ij++;
+                                <tr>
+                                    <td>@item.AttributeName</td>
+                                    <td>@item.AttributeValue</td>
+                                    <td class="text-center">@item.DisplayOrder</td>
+                                    <td class="text-center text-nowrap">
+                                        <a class="btn btn-sm btn-primary" href="~/Product/EditAttribute?ProductID=@item.ProductID&AttributeID=@item.AttributeID">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+                                        <a class="btn btn-sm btn-danger" href="~/Product/DeleteAttribute?ProductID=@item.ProductID&AttributeID=@item.AttributeID">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>

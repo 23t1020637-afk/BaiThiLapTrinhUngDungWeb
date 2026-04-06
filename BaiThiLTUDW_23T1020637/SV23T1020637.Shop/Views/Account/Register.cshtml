@@ -1,0 +1,72 @@
+﻿@model Customer
+@{
+	ViewBag.Title = "Đăng ký";
+}
+<div>
+	<section class="login_box_area section_gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="login_box_img">
+						<img class="img-fluid" src="~/img/login.jpg" alt="">
+							<div class="hover">
+								<h4>New to our website?</h4>
+								<p>There are advances being made in science and technology everyday, and a good example of this is the</p>
+								<a class="primary-btn" href="~/Account/Login">Login an Account</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="login_form_inner">
+							<h3>Register in to enter</h3>
+							<form class="row login_form" asp-action="Register" method="post" id="contactForm" novalidate="novalidate">
+								@Html.AntiForgeryToken()
+								<input type="hidden" name="CustomerID" value="0" />
+								<input type="hidden" name="IsLocked" value="false" />
+								<div class="col-md-12 form-group">
+									
+									<input type="text" class="form-control" id="CustomerName" name="CustomerName" value="@ViewBag.UserName" placeholder="CustomerName * " onfocus="this.placeholder = ''" onblur="this.placeholder = 'CustomerName'">
+									<span asp-validation-for="CustomerName" class="text-danger"></span>
+								</div>
+								<div class="col-md-12 form-group">
+									
+									<input type="text" class="form-control" id="ContactName" name="ContactName" value="" placeholder="ContactName *" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ContactName'">
+									<span asp-validation-for="ContactName" class="text-danger"></span>
+								</div>
+								<div class="col-md-12 form-group">
+									<select class="form-select" 
+                                    asp-for="@Model.Province"
+											asp-items="await SelectListHelper.Provinces()"></select>
+									<span asp-validation-for="Province" class="text-danger"></span>
+								</div>
+								<div class="col-md-12 form-group">
+									<input type="text" class="form-control" id="Address" name="Address" placeholder="Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'">
+								</div>
+								<div class="col-md-12 form-group">
+									<input type="text" class="form-control" id="Phone" name="Phone" placeholder="Phone" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'">
+								</div>
+								<div class="col-md-12 form-group">
+									<input type="text" class="form-control" id="Email" name="Email" placeholder="Email *" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
+									<span asp-validation-for="Email" class="text-danger"></span>
+								</div>
+								<div class="col-md-12 form-group">
+									<input type="password" class="form-control" id="Password" name="Password" placeholder="Password *" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+									<span class="text-danger">@ViewData["PasswordError"]</span>
+								</div>
+								<div class="col-md-12 form-group">
+									<div class="creat_account">
+										<input type="checkbox" id="f-option2" name="selector">
+										<label for="f-option2">Keep me logged in</label>
+									</div>
+								</div>
+								<div class="col-md-12 form-group">
+									<button type="submit" value="submit" class="primary-btn">Register</button>
+									@* <a href="#">Forgot Password?</a> *@
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>

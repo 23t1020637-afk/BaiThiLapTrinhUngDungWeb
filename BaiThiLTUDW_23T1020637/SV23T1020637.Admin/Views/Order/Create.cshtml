@@ -1,0 +1,219 @@
+﻿@model ProductSearchInput
+@{
+    ViewBag.Title = "Lập đơn hàng";
+    List<Province> lstProvince = ViewBag.Province;
+    List<Customer> lstCustomer = ViewBag.Customer;
+    var lstCart = ShoppingCartHelper.GetShoppingCart();
+}
+
+<div class="row">
+    <!-- Tìm kiếm & chọn mặt hàng -->
+    <div class="col-4">
+        <div class="card card-outline card-primary h-100">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-search"></i>
+                    Lựa chọn hàng cần bán
+                </h5>
+            </div>
+
+            <div class="card-body">
+                <!-- Search -->
+                <form class="mb-3"
+                      id="formSearch"
+                      method="get"
+                      action="~/Order/SearchProduct"
+                      data-target="searchResult"
+                      onsubmit="paginationSearch(event, this, 1)">
+                
+                    <div class="input-group">
+
+                        <input class="form-control"
+                               name="searchValue"
+                               placeholder="Nhập tên mặt hàng cần tìm" autofocus />
+
+                        <button class="btn btn-primary">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <div id="searchResult"></div>
+                <!-- Danh sách mặt hàng -->
+                <div></div>
+            </div>
+
+            <div class="card-footer">
+                <ul class="pagination justify-content-between mb-0">
+                    <li class="page-item">
+                        <a class="page-link">
+                            <i class="bi bi-chevron-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link">
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Giỏ hàng và thông tin khách hàng -->
+    <div class="col-8">
+        <!-- Giỏ hàng -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-outline card-success">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="bi bi-cart"></i>
+                            Danh sách mặt hàng đã chọn
+                        </h5>
+                    </div>
+
+                    <div class="card-body">
+                        <table class="table table-bordered table-hover align-middle">
+                            <thead class="table-success">
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th style="width:auto">Tên hàng</th>
+                                    <th class="text-center" style="width:100px">ĐVT</th>
+                                    <th class="text-center" style="width:100px">SL</th>
+                                    <th class="text-end" style="width:150px">Giá</th>
+                                    <th class="text-end" style="width:150px">Thành tiền</th>
+                                    <th style="width:80px"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    decimal total = 0;
+                                    int stt = 0;
+                                }
+                                @foreach (var i in lstCart)
+                                {
+                                    @* <tr>
+                                        <td class="text-center">@i</td>
+                                        <td>Laptop HP Gaming VICTUS</td>
+                                        <td class="text-center">Bộ</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-end">23.990.000</td>
+                                        <td class="text-end">23.990.000</td>
+                                        <td class="text-end text-nowrap">
+                                            <a class="btn btn-sm btn-primary open-modal" href="~/Order/EditCartItem?productId=456">
+                                                <i class="bi bi-pencil"></i>
+                                            </a>
+                                            <a class="btn btn-sm btn-danger open-modal" href="~/Order/DeleteCartItem?productId=456">
+                                                <i class="bi bi-dash"></i>
+                                            </a>
+                                        </td>
+                                    </tr> *@
+                                    <tr>
+                                        <td class="text-center">@(++stt)</td>
+                                        <td>@i.ProductName</td>
+                                        <td class="text-center">@i.Unit</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-end">@i.SalePrice.FormatVND()</td>
+                                        <td class="text-end">@((i.SalePrice + 17000).FormatVND())</td>
+                                        @{
+                                            total += i.SalePrice + 17000;
+                                        }
+                                        <td class="text-end text-nowrap">
+                                            <a class="btn btn-sm btn-primary open-modal" href="~/Order/EditCartItem/@i.ProductID">
+                                                <i class="bi bi-pencil"></i>
+                                            </a>
+                                            <a class="btn btn-sm btn-danger open-modal" href="~/Order/DeleteCartItem/@i.ProductID">
+                                                <i class="bi bi-dash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="5" class="text-end">Tổng cộng:</th>
+                                    <th class="text-end">@total.FormatVND()</th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                        <div class="text-end">
+                            <a class="btn btn-sm btn-danger mt-2 open-modal"                               
+                               href="~/Order/ClearCart">
+                                <i class="bi bi-trash"></i>
+                                Xóa giỏ hàng
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thông tin khách hàng và nơi giao hàng -->
+        <div class="row mt-3">
+            <div class="col-12">
+                <div class="card card-outline card-info">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="bi bi-person"></i>
+                            Thông tin khách hàng & nơi giao hàng
+                        </h5>
+                    </div>
+
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="row mb-3">
+                                <label class="col-md-2 col-form-label">Khách hàng</label>
+                                <div class="col-md-10">
+                                    <select class="form-select" name="CustomerID">
+                                        <option>-- Chọn khách hàng --</option>
+                                        @foreach (var i in lstCustomer)
+                                        {
+                                            <option value="@i.CustomerID">@i.CustomerName</option>
+                                        }
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-md-2 col-form-label">Tỉnh/thành</label>
+                                <div class="col-md-10">
+                                <select class="form-select" name="ProvinceName">
+                                        <option value="Thừa Thiên Huế">-- Chọn Tỉnh/thành giao hàng --</option>
+                                        @foreach(var i in lstProvince)
+                                            {
+                                                <option value="@i.ProvinceName">@i.ProvinceName</option>
+                                            }
+                                        </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-md-2 col-form-label">Địa chỉ</label>
+                                <div class="col-md-10">
+                                    <textarea class="form-control"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="text-end">
+                                <button class="btn btn-primary">
+                                    <i class="bi bi-check-circle"></i>
+                                    Lập đơn hàng
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            paginationSearch(null, document.getElementById("formSearch"), @Model.Page);
+        });
+    </script>
+}

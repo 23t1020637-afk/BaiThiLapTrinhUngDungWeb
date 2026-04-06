@@ -1,0 +1,103 @@
+﻿@model PagedResult<Product>
+@{
+    Layout = null;
+
+}
+<style>
+    .product-img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover; /* Cắt ảnh để vừa khung, không méo */
+        object-position: center; /* Canh giữa */
+    }
+</style>
+<section class="lattest-product-area pb-40 category-list">
+    <div class="row">
+						
+        @foreach (var i in Model.DataItems)
+        {
+					 
+            <div class="col-lg-4 col-md-6">
+                <form action="~/Cart/AddItem" method="post">
+                    <input type="hidden" name="ProductID" value="@i.ProductID" />
+                    <input type="hidden" name="Quantity" value="1" />
+                    <input type="hidden" name="SalePrice" value="@i.Price" />
+                    <input type="hidden" name="ProductName" value="@i.ProductName" />
+                    <input type="hidden" name="Unit" value="@i.Unit" />
+                    <input type="hidden" name="Photo" value="@i.Photo" />
+
+                    <div class="single-product">
+                        <img id="productImg_@i.ProductID"
+                             class="img-fluid product-img"
+                             src="@Url.Content("~/images/products/" + i.Photo)"
+                             alt="@i.ProductName" />
+
+                        <div class="product-details">
+                            <h6>@i.ProductName</h6>
+                            <div class="price">
+                                <h6>@i.Price.FormatVND()</h6>
+                                <h6 class="l-through">@i.Price.FormatVND()</h6>
+                            </div>
+                            <div class="prd-bottom d-flex gap-2">
+
+                                <!-- nút submit form -->
+                                <a class="social-info unified-btn" href="~/Cart/AddItem/@i.ProductID">
+                                    <span class="ti-bag"></span>
+                                    <p class="hover-text">Add to Bag</p>
+		
+                                </a>
+
+                                <!-- Product Detail Link -->
+                                <a href="~/Product/Detail/@i.ProductID" class="social-info unified-btn">
+                                    <span class="lnr lnr-file-empty"></span>
+                                    <p class="hover-text">Detail</p>
+                                </a>
+
+                                <!-- View More Image -->
+                                <a href="javascript:void(0)" class="social-info unified-btn" onclick="openImage()">
+                                    <span class="lnr lnr-move"></span>
+                                    <p class="hover-text">View More</p>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
+    </div>
+</section>
+<!-- End Best Seller -->
+<!-- Start Filter Bar -->
+<div class="filter-bar d-flex flex-wrap align-items-center">
+    <div class="sorting mr-auto">
+        
+    </div>
+    <div class="pagination">
+
+        @foreach (var p in Model.GetDisplayPages())
+        {
+            if (p.IsCurrent)
+            {
+                <li class="page-item active">
+                    <a class="prev-arrow">@p.Page</a>
+                </li>
+            }
+            else if (p.IsEllipsis)
+            {
+                <li class="page-item">
+                    <a class="dot-dot">...</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item">
+                    <a class="next-arrow" href="javascript:;"
+                           onclick="paginationSearch(event, document.getElementById('formSearch'), @p.Page)">
+                        @p.Page
+                    </a>
+                </li>
+            }
+        }
+    </div>
+</div>

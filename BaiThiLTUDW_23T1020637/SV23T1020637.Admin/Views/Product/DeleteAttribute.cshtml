@@ -1,0 +1,82 @@
+﻿<div class="row justify-content-center">
+    <div class="col-md-8">
+
+        <div class="alert alert-danger shadow-sm">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-exclamation-octagon-fill fs-3 me-3"></i>
+                <div>
+                    <h5 class="alert-heading fw-bold mb-1">Cảnh báo xóa dữ liệu!</h5>
+                    <p class="mb-0">
+                        Bạn có chắc chắn muốn xóa thuộc tính này?
+                        <br>
+                        <small>Lưu ý: Các sản phẩm đang sử dụng thuộc tính này có thể sẽ bị mất thông tin tương ứng.</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-danger card-outline">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="bi bi-trash3"></i> Thông tin thuộc tính
+                </h3>
+            </div>
+
+            <div class="card-body">
+
+                <div class="row mb-3 pb-3 border-bottom">
+                    <label class="col-sm-4 col-form-label text-end text-muted">
+                        <i class="bi bi-tag me-1"></i> Tên thuộc tính:
+                    </label>
+                    <div class="col-sm-8 col-form-label">
+                        <span class="fs-5 fw-bold text-danger">Màu sắc</span>
+                    </div>
+                </div>
+
+                <div class="row mb-3 border-bottom pb-2">
+                    <label class="col-sm-4 col-form-label text-end text-muted">
+                        <i class="bi bi-list-ul me-1"></i> Các giá trị:
+                    </label>
+                    <div class="col-sm-8 col-form-label text-dark">
+                        <span class="badge bg-light text-dark border me-1">Đỏ</span>
+                        <span class="badge bg-light text-dark border me-1">Xanh dương</span>
+                        <span class="badge bg-light text-dark border me-1">Vàng</span>
+                        <span class="badge bg-light text-dark border">Đen</span>
+                    </div>
+                </div>
+
+                <div class="row mb-3 border-bottom pb-2">
+                    <label class="col-sm-4 col-form-label text-end text-muted">
+                        <i class="bi bi-sort-numeric-down me-1"></i> Thứ tự hiển thị:
+                    </label>
+                    <div class="col-sm-8 col-form-label text-dark">
+                        1
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <label class="col-sm-4 col-form-label text-end text-muted">
+                        <i class="bi bi-info-circle me-1"></i> Ghi chú:
+                    </label>
+                    <div class="col-sm-8 col-form-label text-muted fst-italic">
+                        Dùng cho các sản phẩm điện thoại và phụ kiện.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-footer text-end bg-light">
+                <form action="#" method="post">
+
+                    <a href="~/Attribute" class="btn btn-secondary me-1">
+                        <i class="bi bi-arrow-return-left"></i> Quay lại
+                    </a>
+
+                    <button type="submit" class="btn btn-danger">
+                        <i class="bi bi-trash-fill"></i> Xóa thuộc tính
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.DataLayers.deps.json
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.DataLayers.pdb
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.Models.pdb
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.AssemblyInfo.cs
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T102.DE8C2382.Up2Date
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\refint\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.pdb
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\ref\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.DataLayers.deps.json
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.DataLayers.pdb
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.Models.pdb
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.AssemblyInfo.cs
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T102.DE8C2382.Up2Date
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\refint\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.pdb
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\ref\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.DataLayers.deps.json
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.DataLayers.pdb
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.Models.pdb
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.AssemblyInfo.cs
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T102.DE8C2382.Up2Date
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\refint\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.pdb
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\ref\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.DataLayers.deps.json
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.DataLayers.pdb
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\bin\Debug\net8.0\SV23T1020637.Models.pdb
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.AssemblyInfo.cs
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T102.DE8C2382.Up2Date
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\refint\SV23T1020637.DataLayers.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\SV23T1020637.DataLayers.pdb
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.DataLayers\obj\Debug\net8.0\ref\SV23T1020637.DataLayers.dll

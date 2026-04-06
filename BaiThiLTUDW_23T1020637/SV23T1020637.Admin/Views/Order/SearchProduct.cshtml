@@ -1,0 +1,43 @@
+﻿@model PagedResult<Product>
+@foreach (var i in Model.DataItems)
+{
+    <form method="post" class="border rounded p-2 mb-2" asp-action="AddItemCart">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="@i.ProductID" />
+        <input type="hidden" name="ProductID" value="@i.ProductID" />
+        <input type="hidden" name="ProductName" value="@i.ProductName" />
+        <input type="hidden" name="SalePrice" value="@i.Price" />
+        <input type="hidden" name="Photo" value="@i.Photo" />
+        <input type="hidden" name="Unit" value="@i.Unit" />
+        <input type="hidden" value="1" name="Quantity" />
+        <strong>@i.ProductName</strong>
+
+        <div class="row mt-2">
+            <div class="col-4">
+                <img src="~/images/products/demo.png"
+                     class="img-fluid border" style="max-height:100px" />
+            </div>
+            <div class="col-8">
+                <div class="row g-2">
+                    <div class="col-7">
+                        <label class="form-label mb-0">Gia</label>
+                        <input class="form-control form-control-sm money-input"
+                               value="@i.Price" />
+                    </div>
+                    <div class="col-5">
+                        <label class="form-label mb-0">SL</label>
+                        <input type="number"
+                               min="1"
+                               value="1"
+                               class="form-control form-control-sm" />
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-sm btn-primary mt-2 w-100">
+                    <i class="bi bi-cart-plus"></i>
+                    Thêm vào giỏ
+                </button>
+            </div>
+        </div>
+    </form>
+}

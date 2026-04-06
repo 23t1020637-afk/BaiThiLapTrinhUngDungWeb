@@ -1,0 +1,244 @@
+﻿@{
+    var doanhThu = ViewBag.doanhThu;
+    var countDonHang = ViewBag.countDonHang;
+    var countKhachHang = ViewBag.countKhachHang;
+    var countSanPham = ViewBag.countSanPham;
+    var lstTopProduct = ViewBag.lstTopProduct;
+    var lstDonHang = (List<OrderViewInfo>)ViewBag.lstDonHang;
+    Func<OrderStatusEnum, (string Text, string Class)> getStatus = status => status switch
+{
+    OrderStatusEnum.Rejected => ("Đơn hàng bị từ chối", "bg-danger"),
+    OrderStatusEnum.Cancelled => ("Đơn hàng bị hủy", "bg-dark"),
+    OrderStatusEnum.New => ("Đang chờ duyệt", "bg-secondary"),
+    OrderStatusEnum.Accepted => ("Đơn hàng đã duyệt", "bg-success"),
+    OrderStatusEnum.Shipping => ("Đang giao hàng", "bg-warning text-dark"),
+    OrderStatusEnum.Completed => ("Đơn hàng hoàn tất", "bg-primary"),
+    _ => ("Không xác định", "bg-light text-dark")
+};
+}
+
+<!-- Thống kê nhanh -->
+<div class="row">
+    <div class="col-lg-3 col-6">
+        <div class="card text-bg-primary">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h6 class="card-title">Doanh thu hôm nay</h6>
+                        <h3 class="mb-0">@(((decimal)doanhThu).FormatVND())</h3>
+                    </div>
+                    <i class="bi bi-currency-dollar fs-1 opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <div class="card text-bg-success">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h6 class="card-title">Đơn hàng</h6>
+                        <h3 class="mb-0">896</h3>
+                    </div>
+                    <i class="bi bi-receipt fs-1 opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <div class="card text-bg-warning">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h6 class="card-title">Khách hàng</h6>
+                        <h3 class="mb-0">599</h3>
+                    </div>
+                    <i class="bi bi-people fs-1 opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <div class="card text-bg-danger">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h6 class="card-title">Sản phẩm</h6>
+                        <h3 class="mb-0">693</h3>
+                    </div>
+                    <i class="bi bi-box-seam fs-1 opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Biểu đồ & thống kê -->
+<div class="row mt-3">
+    <div class="col-lg-8">
+        <div class="card card-success card-outline">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-bar-chart me-1"></i>
+                    Doanh thu theo tháng
+                </h5>
+            </div>
+            <div class="card-body">
+                <canvas id="revenueChart" height="150"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card card-info card-outline">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-star me-1"></i>
+                    Top sản phẩm bán chạy
+                </h5>
+            </div>  	
+            <div class="card-body p-0">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between">
+                        Sony Xperia L C2105 4.3'' Dual-core 8MP 1750mAh
+                        <span class="badge bg-success">11</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        Panasonic DH-3JP3VK Trực tiếp 3.5kW Bơm trợ lực
+                        <span class="badge bg-success">10</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        Xe đầu kéo Hyundai HD170 9 tấn
+                        <span class="badge bg-success">10</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        Xe đẩy du lịch nhỏ gọn 711 (XD711)
+                        <span class="badge bg-success">10</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        Ghế Fisher-Price 18kg 3402
+                        <span class="badge bg-success">9</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Đơn hàng cần xử lý -->
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-clock-history me-1"></i>
+                    Đơn hàng cần xử lý
+                </h5>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Mã đơn</th>
+                            <th>Khách hàng</th>
+                            <th>Ngày</th>
+                            <th class="text-end">Tổng tiền</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var i in lstDonHang)
+                        {
+                            if (OrderStatusEnum.New <= i.Status && i.Status < OrderStatusEnum.Completed)
+                            {
+
+                            <tr>
+                                <td>@i.OrderID</td>
+                                <td>@i.CustomerName</td>
+                                <td>@i.OrderTime</td>
+                                <td class="text-end">@(await i.OrderID.Subtotal())</td>
+                                <td>
+                                    @{
+                                        var (statusText, badgeClass) = getStatus(i.Status);
+                                    }
+                                    <span class="badge @badgeClass">@statusText</span>
+                                </td>
+                            </tr>
+                            
+                            }
+                        }
+                        @* <tr>
+                            <td>#DH00125</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>01/02/2026</td>
+                            <td class="text-end">3.500.000 đ</td>
+                            <td><span class="badge bg-danger">Đang chờ duyệt</span></td>
+                        </tr>
+                        <tr>
+                            <td>#DH00126</td>
+                            <td>Trần Thị B</td>
+                            <td>01/02/2026</td>
+                            <td class="text-end">1.200.000 đ</td>
+                            <td><span class="badge bg-warning">Chờ giao hàng</span></td>
+                        </tr>
+                        <tr>
+                            <td>#DH00127</td>
+                            <td>Lê Văn C</td>
+                            <td>31/01/2026</td>
+                            <td class="text-end">8.900.000 đ</td>
+                            <td><span class="badge bg-warning">Chờ giao hàng</span></td>
+                        </tr> *@
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('revenueChart');
+
+        new Chart(ctx, {
+            type: 'bar', // bar | line | pie | doughnut
+            data: {
+                labels: [
+                    'Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6'
+                ],
+                datasets: [{
+                    label: 'Doanh thu (triệu đồng)',
+                    data: [120, 150, 180, 140, 200, 220],
+                    backgroundColor: 'rgba(13,110,253,0.7)',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return context.raw + ' triệu đồng';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+}

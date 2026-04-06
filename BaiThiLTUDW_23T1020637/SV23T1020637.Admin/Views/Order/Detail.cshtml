@@ -1,0 +1,275 @@
+﻿@model OrderViewInfo
+@{
+    ViewBag.Title = "Chi tiết đơn hàng";
+    List<OrderDetailViewInfo> orderDetails = ViewBag.Orderdetail;
+    bool hideDropdown = Model.Status == OrderStatusEnum.Cancelled || Model.Status == OrderStatusEnum.Rejected || Model.Status == OrderStatusEnum.Completed;
+
+}
+
+@section PageToolBar {
+
+    @if (!hideDropdown)
+    {
+        <div class="btn-group">
+            <button type="button"
+                    class="btn btn-primary dropdown-toggle"
+                    data-bs-toggle="dropdown">
+                <i class="bi bi-gear me-1"></i>
+                Xử lý đơn hàng
+            </button>
+
+            <ul class="dropdown-menu">
+                @switch (Model.Status)
+                {
+                    case OrderStatusEnum.New:
+                        <li><a class="dropdown-item open-modal" href="~/Order/Accept/@Model.OrderID">Duyệt đơn hàng</a></li>
+                        <li><a class="dropdown-item text-danger open-modal" href="~/Order/Cancel/@Model.OrderID">Hủy đơn hàng</a></li>
+                        <li><a class="dropdown-item text-danger open-modal" href="~/Order/Reject/@Model.OrderID">Từ chối đơn hàng</a></li>
+                        break;
+
+                    case OrderStatusEnum.Accepted:
+                        <li><a class="dropdown-item open-modal" href="~/Order/Shipping/@Model.OrderID">Chuyển giao hàng</a></li>
+                        <li><a class="dropdown-item text-danger open-modal" href="~/Order/Cancel/@Model.OrderID">Hủy đơn hàng</a></li>
+                        break;
+
+                    case OrderStatusEnum.Shipping:
+                        <li><a class="dropdown-item open-modal" href="~/Order/Finish/@Model.OrderID">Hoàn tất đơn hàng</a></li>
+                        break;
+
+                    case OrderStatusEnum.Completed:
+                        <li><span class="dropdown-item text-muted">Đơn hàng đã hoàn tất</span></li>
+                        break;
+
+                    // Cancelled hoặc Rejected sẽ không hiển thị dropdown, nên không cần case
+                }
+            </ul>
+        </div> <!-- đóng btn-group -->
+    }
+
+    <a href="~/Order/Delete/@Model.OrderID"
+       class="btn btn-danger ms-1 open-modal">
+        <i class="bi bi-trash"></i>
+        Xóa
+    </a>
+
+    <a href="~/Order" class="btn btn-secondary ms-1">
+        <i class="bi bi-arrow-left"></i>
+        Quay lại
+    </a>
+}
+
+<!-- TRẠNG THÁI ĐƠN HÀNG -->
+@* <div class="alert alert-success d-flex align-items-center mb-3">
+    <i class="bi bi-check-circle-fill fs-4 me-2"></i>
+    <div>
+        <strong>Trạng thái đơn hàng:</strong>
+        Đã hoàn tất lúc <b>22/12/2022 17:00</b>
+    </div>
+</div> *@
+@{
+    var statusColor = Model.Status switch
+    {
+        OrderStatusEnum.Rejected => "red",
+        OrderStatusEnum.Cancelled => "darkred",
+        OrderStatusEnum.New => "blue",
+        OrderStatusEnum.Accepted => "green",
+        OrderStatusEnum.Shipping => "orange",
+        OrderStatusEnum.Completed => "purple",
+        _ => "black"
+    };
+    string statusColor20 = statusColor switch
+    {
+        "red" => "#f8d7da",
+        "darkred" => "#f5c6cb",
+        "blue" => "#cfe2ff",
+        "green" => "#d1e7dd",
+        "orange" => "#ffe5b4",
+        "purple" => "#e2d9f3",
+        _ => "#e2e3e5"
+    };
+    var icon = Model.Status switch
+    {
+        OrderStatusEnum.Rejected => "bi-x-circle-fill",
+        OrderStatusEnum.Cancelled => "bi-slash-circle-fill",
+        OrderStatusEnum.New => "bi-plus-circle-fill",
+        OrderStatusEnum.Accepted => "bi-check-circle-fill",
+        OrderStatusEnum.Shipping => "bi-truck",
+        OrderStatusEnum.Completed => "bi-patch-check-fill",
+        _ => "bi-info-circle"
+    };
+    var statusText = Model.Status switch
+    {
+        OrderStatusEnum.Rejected => "Bị từ chối",
+        OrderStatusEnum.Cancelled => "Đã hủy",
+        OrderStatusEnum.New => "Đơn mới",
+        OrderStatusEnum.Accepted => "Đã chấp nhận",
+        OrderStatusEnum.Shipping => "Đang giao",
+        OrderStatusEnum.Completed => "Hoàn tất",
+        _ => "Không xác định"
+    };
+}
+<div class="alert d-flex align-items-center mb-3"
+     style="background-color:@statusColor20; color:@statusColor; border-left:5px solid @statusColor;">
+    <i class="bi @icon fs-4 me-2" style="color:@statusColor;"></i>
+    <div>
+        <strong>Trạng thái đơn hàng:</strong>
+        <b> @statusText</b>
+    </div>
+</div>
+
+<!-- THÔNG TIN ĐƠN HÀNG -->
+<div class="card card-primary card-outline mb-3">
+    <div class="card-header">
+        <h5 class="card-title mb-0">
+            <i class="bi bi-receipt me-2"></i>
+            Thông tin đơn hàng
+        </h5>
+    </div>
+
+    <div class="card-body ps-4 pe-4">
+        <div class="row mb-2">
+            <div class="col-md-3 fw-bold">Mã đơn hàng</div>
+            <div class="col-md-3">@Model.OrderID</div>
+
+            <div class="col-md-3 fw-bold">Ngày lập</div>
+            <div class="col-md-3">@Model.OrderTime</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 fw-bold">Nhân viên phụ trách</div>
+            <div class="col-md-3">@Model.EmployeeName</div>
+
+            <div class="col-md-3 fw-bold">Ngày nhận đơn</div>
+            <div class="col-md-3">@Model.AcceptTime</div>
+        </div>
+    </div>
+</div>
+
+<!-- THÔNG TIN KHÁCH HÀNG -->
+<div class="card card-info card-outline mb-3">
+    <div class="card-header">
+        <h5 class="card-title mb-0">
+            <i class="bi bi-person me-2"></i>
+            Thông tin khách hàng
+        </h5>
+    </div>
+
+    <div class="card-body ps-4 pe-4">
+        <div class="row mb-2">
+            <div class="col-md-3 fw-bold">Khách hàng</div>
+            <div class="col-md-3">@Model.CustomerName</div>
+
+            <div class="col-md-3 fw-bold">Tên giao dịch</div>
+            <div class="col-md-3">@Model.CustomerContactName</div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-3 fw-bold">Email</div>
+            <div class="col-md-9">@Model.CustomerEmail</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 fw-bold">Địa chỉ</div>
+            <div class="col-md-9">@(Model.CustomerAddress + ", TP Huế" ?? "Chưa có")</div>
+        </div>
+    </div>
+</div>
+
+<!-- THÔNG TIN GIAO HÀNG -->
+<div class="card card-success card-outline mb-3">
+    <div class="card-header">
+        <h5 class="card-title mb-0">
+            <i class="bi bi-truck me-2"></i>
+            Thông tin giao hàng
+        </h5>
+    </div>
+
+    <div class="card-body ps-4 pe-4">
+        <div class="row mb-2">
+            <div class="col-md-3 fw-bold">Người giao hàng</div>
+            <div class="col-md-3">@(Model.ShipperName ?? "Chưa có")</div>
+
+            <div class="col-md-3 fw-bold">Điện thoại</div>
+            <div class="col-md-3">@(Model.ShipperPhone ?? "Chưa có")</div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-3 fw-bold">Địa chỉ giao hàng</div>
+            <div class="col-md-9">@(Model.CustomerAddress ?? "Chưa có")</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 fw-bold">Tỉnh / Thành</div>
+            <div class="col-md-9">Thừa Thiên Huế</div>
+        </div>
+    </div>
+</div>
+
+<!-- DANH SÁCH MẶT HÀNG -->
+<div class="card card-secondary card-outline">
+    <div class="card-header">
+        <h5 class="card-title mb-0">
+            <i class="bi bi-box-seam me-2"></i>
+            Danh sách mặt hàng
+        </h5>
+    </div>
+
+    <div class="card-body table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-secondary text-center">
+                <tr>
+                    <th>STT</th>
+                    <th>Tên hàng</th>
+                    <th>ĐVT</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Thành tiền</th>
+                    <th style="width:90px"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    decimal sumtotal = 0;
+                    int stt = 0;
+                }
+                @foreach (var i in orderDetails)
+                {
+                    <tr>
+                        <td class="text-center">@(++stt)</td>
+                        <td>@i.ProductName</td>
+                        <td class="text-center">@i.Unit</td>
+                        <td class="text-center">1</td>
+                        <td class="text-end">@i.SalePrice.FormatVND()</td>
+                        <td class="text-end">@i.TotalPrice.FormatVND()</td>
+                        @{
+                            sumtotal += i.TotalPrice;
+                        }
+                        <td class="text-end">
+                            <a href="~/Order/EditCartItem/123?productId=456" class="btn btn-sm btn-primary open-modal">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            <a href="~/Order/DeleteCartItem/123?productId=456" class="btn btn-sm btn-danger open-modal">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="5" class="text-end">Tổng cộng</th>
+                    <th class="text-end">@sumtotal.FormatVND()</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .card-body .row {
+            border-bottom: 1px dotted #646464;
+        }
+    </style>
+}

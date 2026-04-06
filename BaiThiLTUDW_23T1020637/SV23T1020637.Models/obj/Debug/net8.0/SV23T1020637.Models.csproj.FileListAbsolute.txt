@@ -1,0 +1,44 @@
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.Models\bin\Debug\net8.0\SV23T1020637.Models.deps.json
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.Models\bin\Debug\net8.0\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.Models\bin\Debug\net8.0\SV23T1020637.Models.pdb
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.AssemblyInfo.cs
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.Models\obj\Debug\net8.0\refint\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.pdb
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\SV23T1020637.Models\obj\Debug\net8.0\ref\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\bin\Debug\net8.0\SV23T1020637.Models.deps.json
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\bin\Debug\net8.0\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\bin\Debug\net8.0\SV23T1020637.Models.pdb
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.AssemblyInfo.cs
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\refint\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.pdb
+C:\Users\Admin\Downloads\SV23T1020637 (2) (1) - Copy\SV23T1020637\SV23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\ref\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\bin\Debug\net8.0\SV23T1020637.Models.deps.json
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\bin\Debug\net8.0\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\bin\Debug\net8.0\SV23T1020637.Models.pdb
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.AssemblyInfo.cs
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\refint\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.pdb
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\ref\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.Models\bin\Debug\net8.0\SV23T1020637.Models.deps.json
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.Models\bin\Debug\net8.0\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.Models\bin\Debug\net8.0\SV23T1020637.Models.pdb
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.AssemblyInfo.cs
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\refint\SV23T1020637.Models.dll
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\SV23T1020637.Models.pdb
+C:\Users\Admin\Downloads\BaiThiLTUDW_23T1020637 (2)\BaiThiLTUDW_23T1020637\SV23T1020637.Models\obj\Debug\net8.0\ref\SV23T1020637.Models.dll

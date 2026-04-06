@@ -1,0 +1,223 @@
+﻿@model List<OrderDetailViewHistory>
+@using SV23T1020637.Shop.AppCodes
+@{
+    decimal Subtotal = 0;
+}
+<style>
+    .order-status {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 30px 0;
+    padding: 0 10px;
+}
+
+.order-status::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 5%;
+    width: 90%;
+    height: 4px;
+    background: #ddd;
+    z-index: 0;
+}
+
+.step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #ccc;
+    color: white;
+    font-size: 18px;
+}
+
+.step p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.step.active span {
+    background: #28a745;
+}
+
+.step.active p {
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* trạng thái đặc biệt */
+.status-cancel {
+    color: red;
+    font-weight: bold;
+}
+
+.status-reject {
+    color: darkred;
+    font-weight: bold;
+}
+</style>
+@if(Model.Count == 0)
+{
+    <div class="no-orders"  style="margin: 250px;">
+    <div class="no-orders-content">
+        <span class="lnr lnr-cart"></span>
+        <h2>Chưa có đơn hàng nào</h2>
+        <p>Bạn chưa thực hiện bất kỳ đơn hàng nào. Hãy bắt đầu mua sắm ngay!</p>
+        <a href="~/Product" class="btn-shop-now">Mua ngay</a>
+    </div>
+</div>
+} else{
+<section class="order_details section_gap">
+    <div class="container">
+        <h3 class="title_confirmation text-center mb-4">Lịch sử mua hàng</h3>
+
+        <div class="row">
+        @foreach (var i in Model.OrderByDescending(x => x.OrderID))
+        {
+            var statusColor = i.Status switch
+            {
+                OrderStatusEnum.Rejected => "red",
+                OrderStatusEnum.Cancelled => "darkred",
+                OrderStatusEnum.New => "blue",
+                OrderStatusEnum.Accepted => "green",
+                OrderStatusEnum.Shipping => "orange",
+                OrderStatusEnum.Completed => "purple",
+                _ => "black"
+            };
+
+            <div class="col-12 mb-4">
+                <div class="order-card p-3 shadow-sm border rounded" style="border-left:5px solid @statusColor;">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h5 class="mb-0">Đơn hàng #@i.OrderID.ToString().HashMD5()</h5>
+                         <div class="order-status">
+    <div class="step @(i.Status >= OrderStatusEnum.New ? "active" : "")">
+        <span>🆕</span>
+        <p>New</p>
+    </div>
+
+    <div class="step @(i.Status >= OrderStatusEnum.Accepted ? "active" : "")">
+        <span>✔</span>
+        <p>Accepted</p>
+    </div>
+
+    <div class="step @(i.Status >= OrderStatusEnum.Shipping ? "active" : "")">
+        <span>🚚</span>
+        <p>Shipping</p>
+    </div>
+
+    <div class="step @(i.Status >= OrderStatusEnum.Completed? "active" : "")">
+        <span>🎉</span>
+        <p>Completed</p>
+    </div>
+</div>
+                        <span class="text-muted">@i.OrderTime.ToString("dd/MM/yyyy HH:mm")</span>
+                       
+
+<!-- Trạng thái lỗi -->
+@if (i.Status == OrderStatusEnum.Cancelled)
+{
+    <p class="status-cancel">❌ Đơn hàng đã bị hủy</p>
+}
+@if (i.Status == OrderStatusEnum.Rejected)
+{
+    <p class="status-reject">⛔ Đơn hàng bị từ chối</p>
+}
+                    </div>
+
+                    <p class="mb-2" style="color:@statusColor; font-weight:bold;">
+                       @{
+    var (statusText, color) = i.Status switch
+    {
+        OrderStatusEnum.Rejected => ("Đơn hàng bị từ chối", "red"),
+        OrderStatusEnum.Cancelled => ("Đơn hàng bị hủy", "darkred"),
+        OrderStatusEnum.New => ("Đơn hàng vừa được tạo", "blue"),
+        OrderStatusEnum.Accepted => ("Đơn hàng đã duyệt", "green"),
+        OrderStatusEnum.Shipping => ("Đang giao hàng", "orange"),
+        OrderStatusEnum.Completed => ("Đơn hàng hoàn tất", "purple"),
+        _ => ("Không xác định", "black")
+    };
+}
+<p style="color:@color; font-weight:bold;">@statusText</p>
+                    </p>
+
+                    <div class="table-responsive mb-2">
+                        <table class="table table-sm table-bordered mb-0">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Unit</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach(var item in i.LstOrderDetails)
+                            {
+                                Subtotal += item.SalePrice * item.Quantity;
+                                <tr>
+                                    <td>@item.ProductName</td>
+                                    <td>@item.Unit</td>
+                                    <td>@item.SalePrice.FormatVND()</td>
+                                    <td>@item.SalePrice.FormatVND()</td>
+                                </tr>
+                            }
+                            <tr>
+                                <td colspan="3" class="text-right font-weight-bold">Tổng đơn</td>
+                                <td class="font-weight-bold">@Subtotal.FormatVND()</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-2">
+                        @if (i.Status == OrderStatusEnum.Accepted || 
+                             i.Status == OrderStatusEnum.Shipping || 
+                             i.Status == OrderStatusEnum.Completed)
+                        {
+                            <a href="@Url.Action("Checkout", "Cart", new { id = i.OrderID })" class="btn btn-primary btn-sm">Xem chi tiết</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-danger btn-sm" 
+   href="@Url.Action("Cancel", "Cart", new { OrderID = @i.OrderID })">
+   Hủy đơn hàng
+</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+    </div>
+</section>
+
+<style>
+.order_details .order-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.order_details .order-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.order_details .title_confirmation {
+    font-size: 28px;
+    font-weight: 600;
+}
+.order_details table {
+    font-size: 0.9rem;
+}
+.order_details .btn-sm {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.85rem;
+}
+</style>
+}
